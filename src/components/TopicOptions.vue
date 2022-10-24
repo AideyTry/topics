@@ -14,7 +14,7 @@
       </el-col>
       <el-col :span="7">
         <el-form-item prop="score">
-          <el-input v-model="optionsData.options[index].score" placeholder="请输入分值" @input="onInput">
+          <el-input v-model="optionsData.options[index].score" placeholder="请输入分值">
             <template #append>分</template>
           </el-input>
         </el-form-item>
@@ -70,11 +70,6 @@ const optionsRules = reactive({
   ],
 })
 
-const onInput = (value) => {
-    optionsRef.value.validateField((valid) => {
-        console.log('valid, fields===', valid)
-    })
-}
 
 const onDelete = (index) => {
   emits('onDelete', index)
